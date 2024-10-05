@@ -22,8 +22,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat "docker build -t auth-image ."
-                bat "docker run -p 8081:8081 -d --name auth-container auth-image"
+                bat "docker build -t registry-image ."
+                bat "docker run -p 8761:8761 -d --name registry-container registry-image"
             }
         }
     }
